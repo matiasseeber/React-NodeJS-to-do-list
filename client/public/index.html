@@ -1,21 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Web site created using create-react-app" />
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+  <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
       Only files inside the `public` folder can be referenced from the HTML.
@@ -24,20 +22,108 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+    integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+  <link rel="stylesheet" href="./assets/css/listItems.css">
+  <title>React App</title>
+</head>
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+  <section class="vh-100 gradient-custom">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col col-xl-10">
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+          <div class="card">
+            <div class="card-body p-5">
+
+              <form class="d-flex justify-content-center align-items-center mb-4" autocomplete="false" action="http://localhost:8080/Api" method="post">
+                <div class="form-outline flex-fill">
+                  <input type="text" id="form2" class="form-control"/>
+                  <!-- <label class="form-label" for="form2">New task...</label> -->
+                </div>
+                <button type="submit" class="btn btn-success ms-2">Add</button>
+              </form>
+
+              <!-- Tabs navs -->
+              <ul class="nav nav-tabs mb-4 pb-2" id="ex1" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <a class="nav-link active" id="ex1-tab-1" data-mdb-toggle="tab" href="#ex1-tabs-1" role="tab"
+                    aria-controls="ex1-tabs-1" aria-selected="true">All</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <a class="nav-link" id="ex1-tab-2" data-mdb-toggle="tab" href="#ex1-tabs-2" role="tab"
+                    aria-controls="ex1-tabs-2" aria-selected="false">Active</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <a class="nav-link" id="ex1-tab-3" data-mdb-toggle="tab" href="#ex1-tabs-3" role="tab"
+                    aria-controls="ex1-tabs-3" aria-selected="false">Completed</a>
+                </li>
+              </ul>
+              <!-- Tabs navs -->
+              <!-- Tabs content -->
+              <div class="tab-content" id="ex1-content">
+                <div class="tab-pane fade show active" id="ex1-tabs-1" role="tabpanel" aria-labelledby="ex1-tab-1">
+                  <ul class="list-group mb-0" id="allTaskList">
+                  </ul>
+                </div>
+                <div class="tab-pane fade" id="ex1-tabs-2" role="tabpanel" aria-labelledby="ex1-tab-2">
+                  <ul class="list-group mb-0">
+                    <li class="list-group-item d-flex align-items-center border-0 mb-2 rounded"
+                      style="background-color: #f4f6f7;">
+                      <input class="form-check-input me-2" type="checkbox" value="" aria-label="..." />
+                      Morbi leo risus
+                    </li>
+                    <li class="list-group-item d-flex align-items-center border-0 mb-2 rounded"
+                      style="background-color: #f4f6f7;">
+                      <input class="form-check-input me-2" type="checkbox" value="" aria-label="..." />
+                      Porta ac consectetur ac
+                    </li>
+                    <li class="list-group-item d-flex align-items-center border-0 mb-0 rounded"
+                      style="background-color: #f4f6f7;">
+                      <input class="form-check-input me-2" type="checkbox" value="" aria-label="..." />
+                      Vestibulum at eros
+                    </li>
+                  </ul>
+                </div>
+                <div class="tab-pane fade" id="ex1-tabs-3" role="tabpanel" aria-labelledby="ex1-tab-3">
+                  <ul class="list-group mb-0">
+                    <li class="list-group-item d-flex align-items-center border-0 mb-2 rounded"
+                      style="background-color: #f4f6f7;">
+                      <input class="form-check-input me-2" type="checkbox" value="" aria-label="..." checked />
+                      <s>Cras justo odio</s>
+                    </li>
+                    <li class="list-group-item d-flex align-items-center border-0 mb-2 rounded"
+                      style="background-color: #f4f6f7;">
+                      <input class="form-check-input me-2" type="checkbox" value="" aria-label="..." checked />
+                      <s>Dapibus ac facilisis in</s>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <!-- Tabs content -->
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <div id="root"></div>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+    integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+    crossorigin="anonymous"></script>
+
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+    integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+    crossorigin="anonymous"></script>
+</body>
+
 </html>
