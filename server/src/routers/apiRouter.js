@@ -8,7 +8,7 @@ router.route("/")
     .post(addTask)
 
 router.route("/:id")
-    .put(updateTask)
-    .patch(deleteTask)
+    .patch(updateTask)
+    .delete(deleteTask)
 
 export default router;

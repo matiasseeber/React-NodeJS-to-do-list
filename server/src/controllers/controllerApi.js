@@ -19,7 +19,7 @@ export function getAllTasks(req, res) {
     data.getAllTasks()
         .then((response) => {
             console.log(response);
-            res.status(200).json(response.filter(task => task.active))
+            res.status(200).json(response);
         })
         .catch((err) => res.status(500).json(err))
 }
